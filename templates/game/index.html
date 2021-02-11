@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View From Your Window Game</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="/media/css/game.css" type="text/css" media="screen,projection" /> 
+	<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key={{GOOGLE_MAPS_KEY}}"></script>
+	<script type="text/javascript" src="/media/js/jquery-1.4.3.min.js"></script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19450444-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+	</script>
+
+</head>
+<body>
+<div id="container">
+ 	<div id="map_canvas" ></div>
+  
+ 	<div id="dialogue">        
+		<h1>View From Your Window Game</h1>
+		<p>Based on the popular <a href="http://andrewsullivan.theatlantic.com/the_daily_dish/2009/11/announcing-the-view-from-your-window.html">Daily Dish meme</a></p>
+		<p>Try to find the location seen in the picture in the upper right within the fixed number of guesses.</p>
+		<h5><a href="#" onclick="dialogueClose();">Begin</a></h5>
+	</div>
+  
+  <table id="vfywGrid">
+  	<tr>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  	</tr>
+  	<tr>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  	</tr>
+  	<tr>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  	</tr>
+  	<tr>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  	</tr>
+  	<tr>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  		<td><a href="#">&nbsp;</a></td>
+  	</tr>
+  </table>
+</div>
+<div id="sideboard">
+	
+	<div>
+		<span id="expandIcon" >+</span>
+		<a href="#" id="vfywClue" class="expandClue"><img src="" width="100" /></a>
+	</div>
+	<div id="vfywScore">
+		<span id="vfywScoreValue"></span>
+		guesses remaining
+	</div>
+	<ul id="mapControls">
+		<li><a href="#" id="resetControl">Reset level</a></li>
+		<li><a href="#" id="newControl">New game</a></li>
+		<li><a href="#" id="normalControl">Map</a></li>
+		<li><a href="#" id="satelliteControl">Satellite</a></li>
+		<!--li><a href="#" id="earthControl">Earth</a></li-->
+		
+	</ul>
+</div>
+
+
+
+<div id="gameOver" style="display:none;">
+	<h1>Game Over</h1>
+	<p>Would you like to <a href="#" onclick="resetGame();" >try again</a> or <a href="#" onclick="newGame();return false;">try a new level</a>?</p>
+</div>
+
+<div id="gameWon" style="display:none;">
+	<p>You have found</p>
+	<h1 id="location"></h1>
+	<p class="originalThread"><a href="">View the original thread on the Daily Dish</a></p>
+	<p class="coordinates">Coordinates: <a href=""></a></p>
+	<p>Would you like to <a href="#" onclick="resetGame(); return false" >try again</a> or <a href="#" onclick="newGame();return false">try a new level</a>?</p>
+</div>
+
+
+<script type="text/javascript" src="/media/js/game.js"></script>
+</body>
+</html>
