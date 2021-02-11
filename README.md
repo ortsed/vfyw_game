@@ -1,4 +1,4 @@
-# vfyw_game
+# View From Your Window Game
 A Django/Javascript/Google Maps API geographic guessing game
 
 The Django application runs a server that renders the game site and returns an API for each game module. 
